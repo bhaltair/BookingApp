@@ -16,6 +16,7 @@ interface SessionCardProps {
   onSelect: (session: Session) => void;
   cardSpacing: number;
   isTablet: boolean;
+  cardWidth: number;
 }
 
 const difficultyColors: Record<string, string> = {
@@ -36,6 +37,7 @@ export default function SessionCard({
   onSelect,
   cardSpacing,
   isTablet,
+  cardWidth,
 }: SessionCardProps) {
   const spotsLabel =
     session.openSpots === 0
@@ -56,7 +58,7 @@ export default function SessionCard({
       onPress={() => onSelect(session)}
       style={[
         styles.card,
-        { marginBottom: cardSpacing },
+        { marginBottom: cardSpacing, width: cardWidth },
         isTablet && styles.cardTablet,
         isSelected ? styles.cardSelected : styles.cardDefault,
       ]}
@@ -122,7 +124,6 @@ const styles = StyleSheet.create<{
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.08,
     shadowRadius: 3,
-    flex: 1,
   } as ViewStyle,
   cardTablet: {
     padding: 20,

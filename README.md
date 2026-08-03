@@ -1,12 +1,27 @@
 # Cross-Platform Feature Architecture & Accessibility Refactor
 
+## Try It
+
+Scan the QR code below to open the GitHub repo, then run locally:
+
+![Scan to open](./assets/expo-qr.png)
+
+```bash
+git clone https://github.com/bhaltair/BookingApp.git
+cd BookingApp
+npm install
+npx expo start
+```
+
+Then scan the QR code in your terminal with the **Expo Go** app to run on your device.
+
 ## Overview
 
 This project refactors a "Session Booking" screen from a single 130-line component into a modular, accessible, and cross-platform-ready React Native (Expo) application. The original implementation was functional but suffered from poor accessibility, no responsive strategy, and zero component reuse.
 
 ## Tech Stack
 
-- **React Native** (via Expo SDK 52)
+- **React Native** (via Expo SDK 54)
 - **TypeScript**
 - **React Native FlatList** with `numColumns` for responsive grids
 

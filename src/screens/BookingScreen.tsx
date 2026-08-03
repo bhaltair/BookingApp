@@ -119,9 +119,10 @@ export default function BookingScreen() {
         onSelect={handleSelectSession}
         cardSpacing={layout.cardSpacing}
         isTablet={isTablet}
+        cardWidth={layout.cardWidth}
       />
     ),
-    [selectedSessionId, handleSelectSession, layout.cardSpacing, isTablet],
+    [selectedSessionId, handleSelectSession, layout.cardSpacing, isTablet, layout.cardWidth],
   );
 
   const keyExtractor = useCallback((item: Session) => item.id, []);

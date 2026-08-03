@@ -29,6 +29,7 @@ export interface LayoutConfig {
   containerPadding: number;
   cardSpacing: number;
   dateChipSpacing: number;
+  cardWidth: number;
 }
 
 export type DeviceClass = "small" | "standard" | "tablet";

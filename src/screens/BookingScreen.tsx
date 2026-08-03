@@ -162,6 +162,11 @@ export default function BookingScreen() {
         renderItem={renderSessionCard}
         numColumns={layout.columns}
         key={`grid-${layout.columns}`}
+        columnWrapperStyle={
+          layout.columns > 1
+            ? { gap: layout.cardSpacing, paddingHorizontal: 2 }
+            : undefined
+        }
         contentContainerStyle={{ paddingBottom: 24 }}
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
@@ -187,6 +192,7 @@ const styles = StyleSheet.create<{
 }>({
   titleBar: {
     paddingHorizontal: 4,
+    paddingTop: 16,
     marginBottom: 8,
   } as ViewStyle,
   screenTitle: {

@@ -3,6 +3,7 @@ import {
   TouchableOpacity,
   Text,
   StyleSheet,
+  Platform,
   ViewStyle,
   TextStyle,
 } from "react-native";
@@ -18,6 +19,8 @@ interface DateChipProps {
 /**
  * A single selectable date button with full accessibility support.
  * Screen reader announces: "Monday, August 3, button, selected/not selected".
+ * On web, aria-pressed is added as fallback since RNW doesn't map
+ * accessibilityState.selected to aria-selected on buttons.
  */
 export default function DateChip({
   date,
@@ -33,6 +36,8 @@ export default function DateChip({
       accessibilityLabel={date.fullLabel}
       accessibilityState={{ selected: isSelected }}
       accessibilityHint="Selects this date to show available sessions"
+      // Web fallback: RNW doesn't render aria-selected on buttons
+      {...(Platform.OS === "web" ? { "aria-pressed": isSelected } : {})}
       onPress={() => onSelect(date)}
       style={[styles.chip, { marginRight: chipSpacing }, isSelected && styles.selectedChip]}
       activeOpacity={0.7}

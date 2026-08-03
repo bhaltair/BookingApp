@@ -4,6 +4,7 @@ import {
   View,
   Text,
   StyleSheet,
+  Platform,
   ViewStyle,
   TextStyle,
 } from "react-native";
@@ -51,6 +52,7 @@ export default function SessionCard({
       accessibilityLabel={a11yLabel}
       accessibilityState={{ selected: isSelected }}
       accessibilityHint="Selects this session to view details"
+      {...(Platform.OS === "web" ? { "aria-pressed": isSelected } : {})}
       onPress={() => onSelect(session)}
       style={[
         styles.card,

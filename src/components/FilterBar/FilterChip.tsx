@@ -3,6 +3,7 @@ import {
   TouchableOpacity,
   Text,
   StyleSheet,
+  Platform,
   ViewStyle,
   TextStyle,
 } from "react-native";
@@ -31,6 +32,7 @@ export default function FilterChip({
       accessibilityLabel={`${filter.label} filter`}
       accessibilityState={{ selected: isSelected }}
       accessibilityHint="Toggles this filter on or off"
+      {...(Platform.OS === "web" ? { "aria-pressed": isSelected } : {})}
       onPress={() => onToggle(filter)}
       style={[styles.chip, isSelected && styles.selectedChip]}
       activeOpacity={0.7}

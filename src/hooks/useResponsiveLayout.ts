@@ -42,7 +42,7 @@ export function useResponsiveLayout(): LayoutConfig & { deviceClass: DeviceClass
       return {
         columns: width > 1024 ? 3 : 2,
         containerPadding: 24,
-        cardSpacing: 12,
+        cardSpacing: 16,
         dateChipSpacing: 12,
         deviceClass,
       };

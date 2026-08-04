@@ -2,10 +2,6 @@
 
 ## Try It
 
-Scan the QR code below to open the GitHub repo, then run locally:
-
-![Scan to open](./assets/expo-qr.png)
-
 ```bash
 git clone https://github.com/bhaltair/BookingApp.git
 cd BookingApp
